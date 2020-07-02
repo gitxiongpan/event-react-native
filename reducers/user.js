@@ -1,15 +1,15 @@
-import { COUNTER_CHANGE } from "../constants";
+import { SET_LOGIN_DETAIL } from '../actions/constants';
 
 const initialState = {
-  count: 2,
+  loginDetail: {},
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case COUNTER_CHANGE:
+    case SET_LOGIN_DETAIL:
       return {
         ...state,
-        count: action.payload,
+        loginDetail: action.loginDetail,
       };
     default:
       return state;

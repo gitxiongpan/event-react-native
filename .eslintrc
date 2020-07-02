@@ -10,6 +10,8 @@
   "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb-base"],
   "rules": {
     "arrow-body-style": "warn",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "object-curly-newline": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }

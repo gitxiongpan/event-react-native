@@ -1,17 +1,17 @@
-import React from "react";
-import * as eva from "@eva-design/eva";
-import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
-import { EvaIconsPack } from "@ui-kitten/eva-icons";
-import { Provider } from "react-redux";
-import { AppNavigator } from "./components/Navigation";
-import { ThemeContext } from "./theme-context";
-import configureStore from "./configureStore";
+import React from 'react';
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import { Provider } from 'react-redux';
+import AppNavigator from './components/Navigation';
+import ThemeContext from './theme-context';
+import configureStore from './configureStore';
 
-export default () => {
-  const [theme, setTheme] = React.useState("light");
+export default function App() {
+  const [theme, setTheme] = React.useState('light');
 
   const toggleTheme = () => {
-    const nextTheme = theme === "light" ? "dark" : "light";
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(nextTheme);
   };
 
@@ -27,4 +27,4 @@ export default () => {
       </ThemeContext.Provider>
     </Provider>
   );
-};
+}
