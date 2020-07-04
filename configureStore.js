@@ -1,10 +1,13 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
 
 export default function configureStore(initialState = {}) {
-  const composeEnhancers = compose;
+  const composeEnhancers = composeWithDevTools({
+    // Specify here name, actionsBlacklist, actionsCreators and other options
+  });
   const reduxSagaMonitorOptions = {};
 
   /* eslint-enable */

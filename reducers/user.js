@@ -1,7 +1,16 @@
-import { SET_LOGIN_DETAIL } from '../actions/constants';
+import { SET_LOGIN_DETAIL, SET_USER } from '../actions/constants';
 
 const initialState = {
-  loginDetail: {},
+  login: {
+    userId: 'asd',
+    token: '',
+    tokenExpiration: 0,
+  },
+  createUser: {
+    email: '',
+    password: null,
+    _id: '',
+  },
 };
 
 const userReducer = (state = initialState, action) => {
@@ -9,7 +18,12 @@ const userReducer = (state = initialState, action) => {
     case SET_LOGIN_DETAIL:
       return {
         ...state,
-        loginDetail: action.loginDetail,
+        login: action.login,
+      };
+    case SET_USER:
+      return {
+        ...state,
+        createUser: action.createUser,
       };
     default:
       return state;
